@@ -1,1 +1,8 @@
-<app-date></app-date>
+User Name: <input type="text" [(ngModel)]="userName" >
+<button (click)="search()">Search</button>
+
+<div *ngIf="responce">
+
+<!--<img src="{{responce.avatar_url}}" alt="">-->
+  <p>Name: {{responce.name}}</p>
+</div>

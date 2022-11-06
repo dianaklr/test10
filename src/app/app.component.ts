@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
-  template:`
-  <div>Angular</div>
-  <nav>
-    <a routerLink="">Home</a> <br>
-    <a routerLink="/about">About</a>
-    <br>
-    <a routerLink="/news">News</a> <br>
-    <a routerLink="/price">Price</a>
-
-
-  </nav>
-<router-outlet></router-outlet>
-  `
+  templateUrl:'./app.component.html'
 })
 export class AppComponent {
+  userName: string ="";
+  responce:any;
 
+  constructor(private http: HttpClient) {
+  }
+  search(){
+    this.http.get('https://api.github.com/users/'+this.userName)
+      .subscribe((responce)=>{
+        this.responce = responce;
+        console.log(this.responce);
+      })
+  }
 }

@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PriceComponent } from './price/price.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NewServiceService} from "./new-service.service";
+import {FormsModule} from "@angular/forms";
 
 
 // @ts-ignore
@@ -37,10 +40,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     // @ts-ignore
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule
 
   ],
-  providers: [],
+  providers: [NewServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
