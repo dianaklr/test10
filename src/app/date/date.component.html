@@ -1,0 +1,15 @@
+<!--<p *ngIf="loggIn; else loggedOut">date works!</p>-->
+<!--<ng-template #loggedOut>-->
+<!--  noo!-->
+<!--</ng-template>-->
+
+<!--<button (click) = "myEvent($event)">Event</button>-->
+
+<button *ngIf="isCollapsed" (click) = "toggleCollapse()">Відобразити</button>
+<button *ngIf="!isCollapsed" (click) = "toggleCollapse()">Приховати</button>
+
+<div *ngIf="!isCollapsed">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Aut esse excepturi expedita hic, nisi pariatur quibusdam reprehenderit veniam?
+    Ad aliquid consequuntur facere hic itaque laborum nostrum numquam quam quis rem?</p>
+</div>
